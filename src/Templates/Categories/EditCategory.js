@@ -58,6 +58,8 @@ const EditCategory = () => {
     dispatch(editCategory(id, formData, navigate));
   };
 
+    const apiURL = process.env.REACT_APP_API_URL;
+
   if (loading) {
     return <Loading show={loading} />;
   }
@@ -107,7 +109,7 @@ const EditCategory = () => {
             {currentImage && (
               <div className="currentCategoryImage">
                 <img
-                  src={`http://localhost:5000/uploads/categories/${currentImage}`}
+                  src={`${apiURL}/uploads/categories/${currentImage}`}
                   alt={category.name}
                 />
               </div>

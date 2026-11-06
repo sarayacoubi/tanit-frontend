@@ -87,10 +87,11 @@ const UserDetails = () => {
   //   return <p>Chargement de l'utilisateur...</p>;
   // }
 
+  const apiURL = process.env.REACT_APP_API_URL;
   const imagePreview = profilePicture
     ? URL.createObjectURL(profilePicture)
     : user.profilePicture
-      ? `http://localhost:5000/uploads/users/${user.profilePicture}`
+      ? `${apiURL}/uploads/users/${user.profilePicture}`
       : "/images/user.jpg";
 
   if (loading) {

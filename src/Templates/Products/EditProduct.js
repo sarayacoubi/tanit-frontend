@@ -272,6 +272,7 @@ const EditProduct = () => {
     );
   }
 
+  const apiURL = process.env.REACT_APP_API_URL;
   // =========================================
   // AFFICHAGE
   // =========================================
@@ -629,7 +630,7 @@ const EditProduct = () => {
                   onClick={() => setMainImage(image)}
                 >
                   <img
-                    src={`http://localhost:5000${image}`}
+                    src={`${apiURL}/${image}`}
                     alt={`${product.name} - vue ${index + 1}`}
                   />
 

@@ -25,12 +25,14 @@ const CategoryCard = ({ category }) => {
     dispatch(deleteOneCategory(category._id, navigate));
     setShowConfirm(false);
   };
+
+    const apiURL = process.env.REACT_APP_API_URL;
   return (
     <>
       <div className="categoryCard">
         <div className="categoryImageContainer">
           <img
-            src={`http://localhost:5000/uploads/categories/${category.image}`}
+            src={`${apiURL}/uploads/categories/${category.image}`}
             alt={category.name}
             className="categoryImage"
           />

@@ -101,6 +101,8 @@ const OrderDetails = () => {
     0,
   );
 
+
+  const apiURL = process.env.REACT_APP_API_URL;
   return (
     <div className="orderDetails">
       {/* En-tête */}
@@ -356,7 +358,7 @@ const OrderDetails = () => {
               const imageUrl = productImage
                 ? productImage.startsWith("http")
                   ? productImage
-                  : `http://localhost:5000${
+                  : `${apiURL}/${
                       productImage.startsWith("/")
                         ? productImage
                         : `/uploads/products/${productImage}`

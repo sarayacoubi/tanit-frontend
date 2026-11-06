@@ -9,14 +9,14 @@ import { editoneuser } from "../../../Redux/Actions/UsersActions";
 const ProfileAdmin = ({ user, onClose }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+ const apiURL = process.env.REACT_APP_API_URL;
   const [isEditing, setIsEditing] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [preview, setPreview] = useState(
     user?.profilePicture
       ? user.profilePicture.startsWith("http")
         ? user.profilePicture
-        : `http://localhost:5000${user.profilePicture}`
+        : `${apiURL}/${user.profilePicture}`
       : "",
   );
 
@@ -66,7 +66,7 @@ const ProfileAdmin = ({ user, onClose }) => {
       user?.profilePicture
         ? user.profilePicture.startsWith("http")
           ? user.profilePicture
-          : `http://localhost:5000${user.profilePicture}`
+          : `${apiURL}/${user.profilePicture}`
         : "",
     );
 

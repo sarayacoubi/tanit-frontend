@@ -25,6 +25,8 @@ const Profile = () => {
     dispatch(currentUser());
   }, [dispatch]);
 
+
+  const apiURL = process.env.REACT_APP_API_URL;
   // Remplir les champs avec les informations de l'utilisateur
   useEffect(() => {
     if (user?._id) {
@@ -37,7 +39,7 @@ const Profile = () => {
 
       setPreview(
         user.profilePicture
-          ? `http://localhost:5000/uploads/users/${user.profilePicture}`
+          ? `${apiURL}/uploads/users/${user.profilePicture}`
           : "",
       );
     }
@@ -74,7 +76,7 @@ const Profile = () => {
 
     setPreview(
       user.profilePicture
-        ? `http://localhost:5000/uploads/users/${user.profilePicture}`
+        ? `${apiURL}/uploads/users/${user.profilePicture}`
         : "",
     );
 

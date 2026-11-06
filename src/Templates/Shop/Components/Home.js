@@ -91,6 +91,8 @@ const Home = () => {
     setActiveProductIndex(index);
   };
 
+    const apiURL = process.env.REACT_APP_API_URL;
+
   return (
     <main className="home">
       {/* =====================================
@@ -293,7 +295,7 @@ const Home = () => {
                       src={
                         category.image.startsWith("http")
                           ? category.image
-                          : `http://localhost:5000/uploads/categories/${category.image}`
+                          : `${apiURL}/uploads/categories/${category.image}`
                       }
                       alt={category.name}
                       loading="lazy"

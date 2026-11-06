@@ -62,6 +62,8 @@ const ProductCard = ({ products, mode = "dashboard" }) => {
     }, 2000);
   };
 
+const apiURL = process.env.REACT_APP_API_URL;
+
   return (
     <>
       <article className={`productCard ${mode}`}>
@@ -70,7 +72,7 @@ const ProductCard = ({ products, mode = "dashboard" }) => {
           <img
             src={
               imageToDisplay
-                ? `http://localhost:5000${imageToDisplay}`
+                ? `${apiURL}/${imageToDisplay}`
                 : "/images/product.jpg"
             }
             alt={products.name}

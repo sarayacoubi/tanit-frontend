@@ -45,7 +45,7 @@ const Cart = () => {
 
   // Format du prix en dinars tunisiens
   const formatPrice = (price) => `${Number(price).toFixed(3)} DT`;
-
+const apiURL = process.env.REACT_APP_API_URL;
   return (
     <div className="cart-page">
       {/* En-tête */}
@@ -84,7 +84,7 @@ const Cart = () => {
                 const imageUrl = product.images?.[0]
                   ? product.images[0].startsWith("http")
                     ? product.images[0]
-                    : `http://localhost:5000${product.images[0]}`
+                    : `${apiURL}/${product.images[0]}`
                   : null;
 
                 return (

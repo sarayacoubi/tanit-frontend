@@ -1,169 +1,4 @@
-// import { Link } from "react-router-dom";
-// import "./products.css";
 
-// const products = [
-//   {
-//     id: 1,
-//     name: "Vase en céramique",
-//     category: "Céramique",
-//     price: 45,
-//     image: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=700",
-//   },
-//   {
-//     id: 2,
-//     name: "Panier artisanal",
-//     category: "Vannerie",
-//     price: 35,
-//     image: "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=700",
-//   },
-//   {
-//     id: 3,
-//     name: "Décoration naturelle",
-//     category: "Décoration",
-//     price: 55,
-//     image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=700",
-//   },
-//   {
-//     id: 4,
-//     name: "Objet décoratif",
-//     category: "Décoration",
-//     price: 29,
-//     image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=700",
-//   },
-//   {
-//     id: 5,
-//     name: "Création en céramique",
-//     category: "Céramique",
-//     price: 48,
-//     image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=700",
-//   },
-//   {
-//     id: 6,
-//     name: "Accessoire artisanal",
-//     category: "Textile",
-//     price: 32,
-//     image: "https://images.unsplash.com/photo-1600166898405-da9535204843?w=700",
-//   },
-//   {
-//     id: 7,
-//     name: "Panier traditionnel",
-//     category: "Vannerie",
-//     price: 40,
-//     image: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=700",
-//   },
-//   {
-//     id: 8,
-//     name: "Pièce décorative",
-//     category: "Décoration",
-//     price: 60,
-//     image: "https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?w=700",
-//   },
-// ];
-
-// const Products = () => {
-//   return (
-//     <main className="productsPage">
-//       {/* PAGE BANNER */}
-//       <section className="productsBanner">
-//         <div className="productsBannerContent">
-//           <span>Découvrez notre collection</span>
-//           <h1>Nos créations artisanales</h1>
-//           <p>
-//             Des pièces uniques qui mettent en valeur le savoir-faire et la
-//             créativité tunisienne.
-//           </p>
-
-//           <div className="breadcrumb">
-//             <Link to="/">Accueil</Link>
-//             <span>/</span>
-//             <span>Produits</span>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* PRODUCTS CONTENT */}
-//       <section className="productsContainer">
-//         <div className="productsPageHeading">
-//           <div>
-//             <span>Notre boutique</span>
-//             <h2>Tous nos produits</h2>
-//           </div>
-
-//           <p>{products.length} produits</p>
-//         </div>
-
-//         {/* SEARCH AND FILTERS */}
-//         <div className="productsToolbar">
-//           <div className="productsSearch">
-//             <span>⌕</span>
-//             <input type="text" placeholder="Rechercher un produit..." />
-//           </div>
-
-//           <select defaultValue="">
-//             <option value="" disabled>
-//               Toutes les catégories
-//             </option>
-//             <option value="ceramique">Céramique</option>
-//             <option value="vannerie">Vannerie</option>
-//             <option value="textile">Textile</option>
-//             <option value="decoration">Décoration</option>
-//           </select>
-
-//           <select defaultValue="recent">
-//             <option value="recent">Plus récents</option>
-//             <option value="priceAsc">Prix croissant</option>
-//             <option value="priceDesc">Prix décroissant</option>
-//           </select>
-//         </div>
-
-//         {/* PRODUCTS GRID */}
-//         <div className="shopProductsGrid">
-//           {products.map((product) => (
-//             <article className="shopProductCard" key={product.id}>
-//               <div className="shopProductImage">
-//                 <img src={product.image} alt={product.name} />
-//                 <span className="productCategory">{product.category}</span>
-//               </div>
-
-//               <div className="shopProductInfo">
-//                 <h3>{product.name}</h3>
-
-//                 <div className="shopProductBottom">
-//                   <span className="shopProductPrice">{product.price} DT</span>
-
-//                   <Link
-//                     to={`/Products/${product.id}`}
-//                     className="viewProductButton"
-//                   >
-//                     Voir le produit
-//                   </Link>
-//                 </div>
-//               </div>
-//             </article>
-//           ))}
-//         </div>
-
-//         {/* PAGINATION */}
-//         <div className="productsPagination">
-//           <button type="button" disabled>
-//             Précédent
-//           </button>
-
-//           <button type="button" className="paginationActive">
-//             1
-//           </button>
-
-//           <button type="button">2</button>
-//           <button type="button">3</button>
-
-//           <button type="button">Suivant</button>
-//         </div>
-//       </section>
-//     </main>
-//   );
-// };
-
-// export default Products;
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -235,6 +70,8 @@ const Products = () => {
     setSortOrder("recent");
   };
 
+
+  const apiURL = process.env.REACT_APP_API_URL;
   // Affichage pendant le chargement
   if (loading) {
     return <Loading />;
@@ -335,9 +172,9 @@ const Products = () => {
               const imageUrl = product.images?.[0]
                 ? product.images[0].startsWith("http")
                   ? product.images[0]
-                  : `http://localhost:5000${product.images[0]}`
+                  : `${apiURL}/${product.images[0]}`
                 : product.mainImage
-                  ? `http://localhost:5000${product.mainImage}`
+                  ? `${apiURL}${product.mainImage}`
                   : null;
 
               return (

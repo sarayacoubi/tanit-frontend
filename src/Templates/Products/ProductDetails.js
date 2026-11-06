@@ -80,6 +80,8 @@ const ProductDetail = ({ mode = "shop" }) => {
     );
   }
 
+  const apiURL = process.env.REACT_APP_API_URL;
+
   return (
     <div className={`productDetailContainer ${mode}`}>
       {/* =================================
@@ -91,7 +93,7 @@ const ProductDetail = ({ mode = "shop" }) => {
           <img
             src={
               images[selectedImage]
-                ? `http://localhost:5000${images[selectedImage]}`
+                ? `${apiURL}/${images[selectedImage]}`
                 : "/images/product.jpg"
             }
             alt={product.name || "Produit artisanal"}

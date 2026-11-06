@@ -23,10 +23,12 @@ const HeaderDash = () => {
     }
   }, [dispatch, token]);
 
+   const apiURL = process.env.REACT_APP_API_URL;
+
   // Récupérer la photo de profil
   const getProfileImage = () => {
     if (user?.profilePicture) {
-      return `http://localhost:5000/uploads/users/${user.profilePicture}`;
+      return `${apiURL}/uploads/users/${user.profilePicture}`;
     }
 
     return sajnen;
