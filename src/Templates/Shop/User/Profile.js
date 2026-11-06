@@ -43,7 +43,7 @@ const Profile = () => {
           : "",
       );
     }
-  }, [user]);
+  }, [user,apiURL]);
 
   // Modifier les champs
   const handleChange = (e) => {
