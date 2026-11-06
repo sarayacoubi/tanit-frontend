@@ -1,0 +1,5 @@
+
+export const GETALLORDERS = "GETALLORDERS";
+export const GETONEORDER = "GETONEORDER";
+export const EDITORDERSTATUS = "EDITORDERSTATUS";
+export const ADDORDER = "ADDORDER ";

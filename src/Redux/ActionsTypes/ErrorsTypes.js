@@ -1,0 +1,4 @@
+
+
+export const HANDELEERROR = "HANDELEERROR";
+export const CLEARERROR = "CLEARERROR";

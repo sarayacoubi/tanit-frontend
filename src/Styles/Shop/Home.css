@@ -1,0 +1,34 @@
+/* .homeContainer {
+  background-image: url("../../Assets/Images/tunisianCraft.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+} */
+.homeContent {
+  width: 500px;
+  padding: 2rem;
+}
+.homeTitle {
+  font-family: var(--font-3);
+  font-size: 4rem;
+  color: var(--bleu);
+  font-weight: 600;
+}
+.homeDiscription {
+  font-size: 1.5rem;
+}
+.homeBtn {
+  margin-top: 1rem;
+  background: var(--bleu);
+  color: #ffff;
+  border: none;
+  font-size: 1rem;
+  padding: 0.9rem 1.3rem;
+  cursor: pointer;
+}
+.homeBtn:hover {
+  background: var(--light-bleu);
+}

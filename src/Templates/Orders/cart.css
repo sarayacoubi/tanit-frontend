@@ -1,0 +1,349 @@
+/* ==============================
+   CART PAGE - TANIT
+   Lavender Softly
+============================== */
+
+.cart-page {
+  min-height: 80vh;
+  padding: 60px 7%;
+  background: #f7f4fc;
+  color: #514461;
+  font-family: inherit;
+}
+
+/* HEADER */
+
+.cart-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.cart-header h1 {
+  font-size: 34px;
+  font-weight: 600;
+  color: #514461;
+  margin-bottom: 12px;
+}
+
+.cart-header p {
+  font-size: 15px;
+  color: #8b7d9d;
+}
+
+/* MAIN CONTAINER */
+
+.cart-container {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+  align-items: start;
+  max-width: 1250px;
+  margin: auto;
+}
+
+/* CART ITEMS */
+
+.cart-items-section,
+.cart-summary {
+  background: #ffffff;
+  border: 1px solid #e9e0f5;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(110, 85, 145, 0.04);
+}
+
+.cart-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee8f5;
+}
+
+.cart-section-header h2,
+.cart-summary h2 {
+  font-size: 19px;
+  font-weight: 600;
+  color: #514461;
+}
+
+.cart-section-header span {
+  font-size: 13px;
+  color: #9b8bae;
+}
+
+/* CART ITEM */
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: 22px;
+  align-items: center;
+  padding: 22px 0;
+  border-bottom: 1px solid #f0ecf5;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-image {
+  width: 110px;
+  height: 115px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f1ebf8;
+}
+
+.cart-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* PRODUCT INFO */
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.cart-item-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #514461;
+}
+
+.cart-item-info p {
+  font-size: 13px;
+  color: #9b8bae;
+}
+
+.cart-item-price {
+  font-size: 15px;
+  font-weight: 600;
+  color: #9276b8;
+}
+
+/* QUANTITY AND ACTIONS */
+
+.cart-item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e5d9f0;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.quantity-control button {
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: #f7f4fc;
+  color: #765c98;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.quantity-control button:hover {
+  background: #e9e0f5;
+}
+
+.quantity-control span {
+  min-width: 35px;
+  text-align: center;
+  font-size: 14px;
+  color: #514461;
+}
+
+.remove-item {
+  border: none;
+  background: transparent;
+  color: #a18ab9;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.remove-item:hover {
+  color: #76518f;
+  text-decoration: underline;
+}
+
+/* SUMMARY */
+
+.cart-summary {
+  position: sticky;
+  top: 25px;
+}
+
+.cart-summary h2 {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee8f5;
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: #8b7d9d;
+}
+
+.summary-divider {
+  height: 1px;
+  background: #eee8f5;
+  margin: 20px 0;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #514461;
+}
+
+.summary-total span:last-child {
+  color: #9276b8;
+}
+
+/* CHECKOUT */
+
+.checkout-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #9276b8;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background: #765c98;
+  transform: translateY(-2px);
+}
+
+.cart-security {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #a294b2;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 992px) {
+  .cart-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-summary {
+    position: static;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cart-page {
+    padding: 35px 5%;
+  }
+
+  .cart-header h1 {
+    font-size: 27px;
+  }
+
+  .cart-items-section,
+  .cart-summary {
+    padding: 17px;
+  }
+
+  .cart-item {
+    grid-template-columns: 80px 1fr;
+    gap: 13px;
+  }
+
+  .cart-item-image {
+    width: 80px;
+    height: 90px;
+  }
+
+  .cart-item-info h3 {
+    font-size: 14px;
+  }
+
+  .cart-item-actions {
+    grid-column: 2;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Retour aux produits */
+.back-products-btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.back-products-btn:hover {
+  background: #f0ecff;
+  color: var(--color-primary-hover);
+  border-color: var(--color-primary);
+}
+
+.back-products-btn i {
+  font-size: 16px;
+}
+.clear-cart-btn {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 12px;
+}
+.clear-cart-btn:hover {
+  background: #f0ecff;
+  color: var(--color-primary-hover);
+  border-color: var(--color-primary);
+}

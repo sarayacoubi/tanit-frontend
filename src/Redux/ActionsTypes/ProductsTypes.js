@@ -1,0 +1,6 @@
+export const GETALLPRODUCTS = "GETALLPRODUCTS";
+export const ADDPRODUCT = "ADDPRODUCT";
+export const FAIL = "FAIL";
+export const GETONEPRODUCT = "GETONEPRODUCT";
+export const EDITPRODUCT = "EDITPRODUCT";
+export const DELETEPRODUCT = "DELETEPRODUCT";

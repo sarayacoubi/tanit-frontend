@@ -1,0 +1,63 @@
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:20%;
+    height:100vh;
+  
+    border-right:1px solid var(--bleu);
+  
+ 
+
+  
+    padding:2rem;
+
+}
+.dashboardTitle{
+font-size:1.5rem;
+color: var(--bleu);
+margin-bottom:3rem;
+
+}
+.dashboardTitle span{
+
+  font-size:2rem;
+  color: var(--pourpre);
+}
+.dashItems{
+margin-bottom:3rem;
+
+}
+.dashItems li{
+  margin-bottom:1rem;
+  font-size:1.3rem;
+  color: var(--light-bleu);
+  cursor:pointer;
+  padding:5px;
+ 
+}
+.dashItems li{
+  color: var(--bleu);
+}
+.dashItems li a,
+.dashItems li i{
+  margin-right:1rem;
+   color: var(--light-bleu);
+  
+}
+.dashItems li:hover{
+  background: var(--light-bleu-2);
+}
+.sibebarBtn{
+  padding:9px;
+  background: var(--light-bleu-2);
+  border:none;
+  color: var(--bleu);
+  cursor:pointer;
+  border: 1px solid transparent;
+}
+.sibebarBtn:hover{
+ border-color: var(--bleu);
+ background: transparent; 
+}

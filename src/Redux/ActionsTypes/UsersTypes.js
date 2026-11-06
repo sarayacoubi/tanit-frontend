@@ -1,0 +1,11 @@
+export const REGISTER = "REGISTER";
+export const FAIL = "FAIL";
+export const LOGIN = "LOGIN";
+export const CURRENTUSER = "CURRENTUSER";
+export const LOGOUT = "LOGOUT";
+export const UPDATEONEUSER = "UPDATEONEUSER";
+export const GETALLUSERS = "GETALLUSERS";
+export const GETONEUSER = "GETONEUSER";
+export const DELETEUSER = "DELETEUSER";
+export const ADDUSER = "ADDUSER";
+export const CREATEPROFESSIONALACCOUNT = "CREATEPROFESSIONALACCOUNT";

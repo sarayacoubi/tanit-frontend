@@ -1,0 +1,4 @@
+export const ADDTOCART = "ADDTOCART";
+export const REMOVEFROMCART = "REMOVEFROMCART";
+export const UPDATEQUANTITY = "UPDATEQUANTITY";
+export const CLEARCART = "CLEARCART";

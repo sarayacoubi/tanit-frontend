@@ -1,0 +1,101 @@
+
+.addProduct {
+  max-width: 850px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.addProduct h2 {
+  color: var(--bleu);
+  margin-bottom: 0.5rem;
+}
+
+.addProduct > p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.addProductForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.formGroup label {
+  font-weight: 600;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--bleu);
+}
+
+.formGroup textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.formRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.addProductForm button {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--bleu);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.addProductForm button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.formError {
+  color: #c62828;
+  background: #ffebee;
+  padding: 0.8rem;
+  border-radius: 6px;
+}
+
+.formSuccess {
+  color: #216e39;
+  background: #e8f5e9;
+  padding: 0.8rem;
+  border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  .addProduct {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .formRow {
+    flex-direction: column;
+  }
+}

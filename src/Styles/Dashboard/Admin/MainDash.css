@@ -1,0 +1,7 @@
+
+.dashMainContainer{
+    margin-top:70px;
+    margin-left:300px;
+    width: calc(100% -300px);
+    padding:1rem;
+}

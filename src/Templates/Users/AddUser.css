@@ -1,0 +1,227 @@
+/* ================================
+   OVERLAY
+================================ */
+
+.addUserOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(35, 32, 55, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ================================
+   MODAL
+================================ */
+
+.addUserModal {
+  width: 100%;
+  max-width: 750px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: var(--shadow-lg);
+  animation: addUserAppear 0.25s ease;
+}
+
+@keyframes addUserAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.addUserHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.addUserHeader h2 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.closeAddUser {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #f5f3fc;
+  color: var(--color-text-secondary);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.closeAddUser:hover {
+  background: #fce8e8;
+  color: #d95353;
+}
+
+/* ================================
+   FORM
+================================ */
+
+.addUserModal form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ================================
+   FORM GROUP
+================================ */
+
+.addUserGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.addUserGroup label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.addUserGroup input,
+.addUserGroup select,
+.addUserGroup textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: 13px;
+  outline: none;
+  transition: var(--transition);
+  box-sizing: border-box;
+}
+
+.addUserGroup input:focus,
+.addUserGroup select:focus,
+.addUserGroup textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(169, 155, 234, 0.15);
+}
+
+.addUserGroup textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.addUserGroup input[type="file"] {
+  padding: 9px;
+  background: var(--color-background);
+  cursor: pointer;
+}
+
+.addUserGroup input[type="file"]::file-selector-button {
+  background: var(--color-secondary);
+  color: var(--color-text);
+  border: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* ================================
+   ACTIONS
+================================ */
+
+.addUserActions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.addUserActions button {
+  padding: 12px 25px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cancelAddUser {
+  background: var(--color-white);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.cancelAddUser:hover {
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.submitAddUser {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+}
+
+.submitAddUser:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 600px) {
+  .addUserModal {
+    padding: 22px 18px;
+    max-height: 95vh;
+  }
+
+  .addUserModal form {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .addUserHeader h2 {
+    font-size: 18px;
+  }
+
+  .addUserActions {
+    flex-direction: column-reverse;
+  }
+
+  .addUserActions button {
+    width: 100%;
+  }
+}

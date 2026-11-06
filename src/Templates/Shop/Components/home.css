@@ -1,0 +1,529 @@
+/* ==================================================
+   TANIT - HOME PAGE
+   Theme: Soft Lavender
+================================================== */
+
+/* ================= GLOBAL ================= */
+
+.home {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  color: #3e3452;
+}
+
+.home section {
+  padding: 75px 8%;
+}
+
+/* GRANDS TITRES VISIBLES, AU MILIEU ET AVEC EFFET SHADOW */
+.home h2 {
+  color: #3e3452;
+  font-size: 38px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+  text-shadow: 0 4px 15px rgba(121, 90, 171, 0.22);
+}
+
+.sectionHeading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 40px auto;
+}
+
+.sectionEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #896bb3;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+/* ==================================================
+   HERO CAROUSEL
+================================================== */
+
+.heroCarousel {
+  position: relative;
+  width: 100%;
+  height: 570px;
+  min-height: 570px;
+  overflow: hidden;
+  background: linear-gradient(120deg, #faf8fd 0%, #f1ebf8 55%, #ebe4f4 100%);
+}
+
+.heroSlide {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  grid-template-areas: "image content";
+  align-items: center;
+  gap: 45px;
+  padding: 45px 80px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(30px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    visibility 0.6s ease;
+}
+
+.heroSlide.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+/* ================= HERO CONTENT ================= */
+
+.heroProductContent {
+  grid-area: content;
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.heroProductContent h1 {
+  color: #403753;
+  font-size: 36px;
+  font-weight: 750;
+  line-height: 1.3;
+  margin-bottom: 18px;
+  letter-spacing: -0.6px;
+}
+
+/* DESCRIPTION */
+
+.heroProductDescription {
+  width: 100%;
+  max-width: 480px;
+  color: #777187;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+/* PRICE */
+
+.heroProductPrice {
+  color: #896bb3;
+  font-size: 25px;
+  font-weight: 750;
+  margin-bottom: 23px;
+}
+
+/* ================= HERO IMAGE & FLÈCHES COLLÉES À DROITE ================= */
+
+.heroProductImageWrapper {
+  grid-area: image;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.heroProductImage {
+  width: 100%;
+  max-width: 460px;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #e9e2f2;
+  box-shadow:
+    0 18px 40px rgba(64, 48, 91, 0.14),
+    0 5px 12px rgba(64, 48, 91, 0.07);
+}
+
+.heroProductImage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.heroProductImage:hover img {
+  transform: scale(1.05);
+}
+
+/* FLÈCHES DU CAROUSEL PLACÉES EXACTEMENT À DROITE DE LA PHOTO */
+.heroArrow {
+  position: absolute;
+  right: calc(50% - 255px); /* Se cale juste sur le bord droit de la photo */
+  z-index: 10;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(137, 107, 179, 0.2);
+  background: rgba(255, 255, 255, 0.96);
+  color: #795aab;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(53, 39, 77, 0.15);
+  transition: all 0.3s ease;
+}
+
+.heroArrow.heroPrev {
+  top: calc(50% - 26px);
+}
+
+.heroArrow.heroNext {
+  top: calc(50% + 26px);
+}
+
+.heroArrow:hover {
+  color: #ffffff;
+  background: #896bb3;
+  transform: scale(1.1);
+}
+
+/* ==================================================
+   HERO BUTTONS
+================================================== */
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.heroActions a,
+.heroActions button {
+  min-height: 46px;
+  padding: 12px 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  border: none;
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.heroButton {
+  color: #ffffff;
+  background: linear-gradient(135deg, #9b7bc3, #795aab);
+  box-shadow: 0 7px 18px rgba(121, 90, 171, 0.28);
+}
+
+.heroButton:hover {
+  background: linear-gradient(135deg, #8968b5, #684991);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(121, 90, 171, 0.35);
+}
+
+.heroSecondaryButton {
+  color: #795aab;
+  background: #ffffff;
+  border: 1px solid #dcd1ec !important;
+  box-shadow: 0 5px 15px rgba(64, 48, 91, 0.09);
+}
+
+.heroSecondaryButton:hover {
+  color: #ffffff;
+  background: #896bb3;
+  border-color: #896bb3 !important;
+  transform: translateY(-3px);
+}
+
+/* ==================================================
+   CAROUSEL INDICATORS & COUNTER
+================================================== */
+
+.heroIndicators {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  z-index: 5;
+}
+
+.heroIndicator {
+  width: 9px;
+  height: 9px;
+  border: none;
+  border-radius: 20px;
+  background: #c9bddb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.heroIndicator.active {
+  width: 30px;
+  background: #896bb3;
+  box-shadow: 0 2px 8px rgba(137, 107, 179, 0.3);
+}
+
+.heroCounter {
+  position: absolute;
+  bottom: 16px;
+  right: 40px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #896bb3;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 4px 10px;
+  border-radius: 12px;
+  z-index: 5;
+}
+
+/* ==================================================
+   CATEGORIES SECTION (PLUS PETITES & COMPACTES)
+================================================== */
+
+.categoriesSection {
+  background: #ffffff;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.categoryCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #f0ebf8;
+  box-shadow: 0 4px 12px rgba(64, 48, 91, 0.05);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.categoryCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(64, 48, 91, 0.12);
+}
+
+/* IMAGE DE CATÉGORIE RÉDUITE / PLUS PETITE */
+.categoryCard .categoryImage {
+  position: relative;
+  width: 100%;
+  height: 120px; /* Réduit à 120px pour un format plus compact */
+  overflow: hidden;
+  background: #f4f0fb;
+}
+
+.categoryCard img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.categoryCard:hover img {
+  transform: scale(1.05);
+}
+
+.categoryOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(64, 48, 91, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.categoryCard:hover .categoryOverlay {
+  opacity: 1;
+}
+
+.categoryInfo {
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.categoryCard h3 {
+  color: #403753;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.categoryDescription {
+  color: #888296;
+  font-size: 11px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+/* ==================================================
+   POPULAR PRODUCTS SECTION
+================================================== */
+
+.popularSection {
+  background: #f8f6fc;
+}
+
+.popularHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: left !important;
+}
+
+.popularHeading h2 {
+  text-align: left !important;
+}
+
+.viewAllProducts {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #795aab;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* ==================================================
+   ARTISANS SECTION
+================================================== */
+
+.artisanSection {
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.artisanContent h2 {
+  text-align: left !important;
+}
+
+.artisanContent p {
+  color: #777187;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.artisanButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 25px;
+  border-radius: 12px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #9b7bc3, #795aab);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 7px 18px rgba(121, 90, 171, 0.25);
+}
+
+.artisanDecoration {
+  background: #f8f6fc;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #efeaf8;
+}
+
+.artisanDecoration i {
+  font-size: 36px;
+  color: #795aab;
+  margin-bottom: 10px;
+}
+
+.artisanDecoration span {
+  display: block;
+  font-size: 13px;
+  color: #888296;
+  margin-bottom: 4px;
+}
+
+.artisanDecoration strong {
+  font-size: 20px;
+  color: #403753;
+}
+
+/* ==================================================
+   RESPONSIVE DESIGN
+================================================== */
+
+@media (max-width: 1024px) {
+  .categoriesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroCarousel {
+    height: 720px;
+    min-height: 720px;
+  }
+
+  .heroSlide {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 30px 20px;
+  }
+
+  .heroArrow {
+    right: 15px !important;
+  }
+
+  .categoriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .artisanSection {
+    grid-template-columns: 1fr;
+  }
+}

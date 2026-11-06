@@ -1,0 +1,36 @@
+
+.adminDash {
+  min-height: 100vh;
+  background: var(--color-background);
+}
+
+.dashContent {
+  margin-left: 250px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashMainContainer {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 30px;
+  flex: 1;
+}
+
+@media (max-width: 1024px) {
+  .dashContent {
+    margin-left: 230px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashContent {
+    margin-left: 0;
+  }
+
+  .dashMainContainer {
+    padding: 75px 16px 24px;
+  }
+}

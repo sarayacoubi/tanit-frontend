@@ -1,0 +1,266 @@
+/* Fond sombre derrière la modal */
+.profileOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(3px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+  z-index: 1000;
+
+  animation: overlayAppear 0.2s ease;
+}
+
+/* Fenêtre principale */
+.profileModal {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2rem;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+
+  animation: modalAppear 0.25s ease;
+}
+
+/* Bouton de fermeture */
+.profileClose {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #475569;
+
+  font-size: 1.7rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.profileClose:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* En-tête du profil */
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.profileAvatar {
+  width: 82px;
+  height: 82px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 3px solid var(--bleu);
+  background: #f1f5f9;
+}
+
+.profileHeader h2 {
+  margin: 0 2rem 0.4rem 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1e293b;
+  overflow-wrap: anywhere;
+}
+
+.profileHeader p {
+  display: inline-block;
+  margin: 0;
+
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+
+  background: #eaf1fb;
+  color: var(--bleu);
+
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Formulaire */
+.profileForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.profileForm h3 {
+  margin: 0.5rem 0 0.6rem;
+
+  color: var(--bleu);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.profileForm label {
+  color: #475569;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.profileForm input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 0.8rem 0.9rem;
+
+  border: 1px solid #dbe1e8;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 0.95rem;
+
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.profileForm input:focus {
+  border-color: var(--bleu);
+  box-shadow: 0 0 0 3px rgba(37, 82, 145, 0.12);
+}
+
+/* Informations en lecture seule */
+.profileInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #edf0f4;
+
+  font-size: 0.9rem;
+}
+
+.profileInfo span:first-child {
+  color: #64748b;
+}
+
+.profileInfo span:last-child {
+  color: #1e293b;
+  font-weight: 600;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+/* Boutons */
+.profileActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+
+  margin-top: 1.2rem;
+  padding-top: 0.5rem;
+}
+
+.profileActions button {
+  padding: 0.75rem 1.2rem;
+
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.profileCancel {
+  border: 1px solid #dbe1e8;
+  background: #ffffff;
+  color: #475569;
+}
+
+.profileCancel:hover {
+  background: #f1f5f9;
+}
+
+.profileSave {
+  border: 1px solid var(--bleu);
+  background: var(--bleu);
+  color: #ffffff;
+}
+
+.profileSave:hover {
+  filter: brightness(0.9);
+}
+
+.profileActions button:active {
+  transform: scale(0.98);
+}
+
+/* Animations */
+@keyframes overlayAppear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Adaptation mobile */
+@media (max-width: 480px) {
+  .profileModal {
+    padding: 1.3rem;
+    border-radius: 14px;
+  }
+
+  .profileAvatar {
+    width: 65px;
+    height: 65px;
+  }
+
+  .profileHeader h2 {
+    font-size: 1.1rem;
+  }
+
+  .profileActions button {
+    padding: 0.7rem 0.9rem;
+  }
+
+  .profileInfo {
+    font-size: 0.82rem;
+  }
+}

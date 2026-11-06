@@ -1,0 +1,154 @@
+
+.headerdash {
+  min-height: 90px;
+  width: 100%;
+  padding: 18px 32px;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.headerWelcome h1 {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.headerWelcome p {
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.headerIconBtn {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--color-border);
+  border-radius: 13px;
+  background: var(--color-white);
+  color: var(--color-text-secondary);
+  font-size: 20px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.headerIconBtn:hover {
+  background: #F4F1FD;
+  color: var(--color-primary-hover);
+}
+
+.notificationDot {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  width: 7px;
+  height: 7px;
+  background: var(--color-accent);
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.headerDivider {
+  width: 1px;
+  height: 38px;
+  background: var(--color-border);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 5px 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 12px;
+  transition: var(--transition);
+}
+
+.profile:hover {
+  background: #F8F6FE;
+}
+
+.profile img {
+  width: 43px;
+  height: 43px;
+  object-fit: cover;
+  border-radius: 13px;
+  border: 2px solid var(--color-secondary);
+}
+
+.profileInfo h3 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.profileInfo span {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  color: var(--color-text-secondary);
+}
+
+.profileArrow {
+  font-size: 17px;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+  .headerdash {
+    padding: 16px 18px 16px 72px;
+    min-height: 80px;
+  }
+
+  .headerWelcome h1 {
+    font-size: 17px;
+  }
+
+  .headerWelcome p {
+    font-size: 10px;
+  }
+
+  .headerActions {
+    gap: 10px;
+  }
+
+  .headerDivider,
+  .profileInfo,
+  .profileArrow {
+    display: none;
+  }
+
+  .profile {
+    padding: 0;
+  }
+
+  .profile img {
+    width: 39px;
+    height: 39px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerWelcome p {
+    display: none;
+  }
+
+  .headerIconBtn {
+    width: 36px;
+    height: 36px;
+  }
+}

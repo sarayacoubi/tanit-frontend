@@ -1,0 +1,131 @@
+
+/* =================================
+   LOGIN PAGE
+================================= */
+
+.form-container {
+  width: 100%;
+  min-height: calc(100vh - 76px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background: #F7F7FC;
+}
+
+/* =================================
+   LOGIN CARD
+================================= */
+
+.form-container h2 {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 0 25px;
+  color: #343447;
+  font-family: var(--font-main);
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.form-container form {
+  width: 100%;
+  max-width: 430px;
+  padding: 38px 35px;
+  background: #FFFFFF;
+  border: 1px solid #EEEEF4;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(70, 60, 120, 0.07);
+}
+
+/* =================================
+   INPUT GROUP
+================================= */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 22px;
+}
+
+.input-group label {
+  color: #45445A;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.input-group input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid #E5E3ED;
+  border-radius: 10px;
+  outline: none;
+  background: #FAFAFD;
+  color: #343447;
+  font-family: var(--font-main);
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+  color: #AAA9B9;
+  font-size: 12px;
+}
+
+.input-group input:focus {
+  border-color: #A99BEA;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(169, 155, 234, 0.13);
+}
+
+/* =================================
+   SUBMIT BUTTON
+================================= */
+
+.btn-submit {
+  width: 100%;
+  height: 46px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 10px;
+  background: #A99BEA;
+  color: #FFFFFF;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #9282D8;
+  box-shadow: 0 5px 15px rgba(146, 130, 216, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 35px 16px;
+  }
+
+  .form-container h2 {
+    font-size: 22px;
+  }
+
+  .form-container form {
+    padding: 28px 22px;
+  }
+}
